@@ -26,8 +26,8 @@ spec:
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         env:
-            - name: REDIS_HOST
-            value: {{ template "fullname" . }}-redis-master
+          - name: REDIS_HOST
+          value: {{ template "fullname" . }}-redis-master
 		
 {{- range $pkey, $pval := .Values.env }}
         - name: {{ $pkey }}
