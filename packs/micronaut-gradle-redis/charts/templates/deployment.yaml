@@ -1,4 +1,6 @@
-{{- if .Values.knativeDeploy }}
+env:
+  - name: REDIS_HOST
+    value: {{ template "fullname" . }}-redis-master{{- if .Values.knativeDeploy }}
 {{- else }}
 apiVersion: extensions/v1beta1
 kind: Deployment
